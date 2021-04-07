@@ -1,0 +1,2 @@
+diff_drive:joy_cmd:keyboard_cont:keyboard_pub:realsense-ros/realsense2_camera:realsense-ros/realsense2_description:robot_setup_tf:system_control:wheel
+-DCATKIN_DEVEL_PREFIX=/home/mangokid/wombat/devel -DCMAKE_INSTALL_PREFIX=/home/mangokid/wombat/install -G Unix Makefiles

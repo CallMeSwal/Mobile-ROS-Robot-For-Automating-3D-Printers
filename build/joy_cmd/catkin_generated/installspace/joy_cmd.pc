@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/install
+
+Name: joy_cmd
+Description: Description of joy_cmd
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

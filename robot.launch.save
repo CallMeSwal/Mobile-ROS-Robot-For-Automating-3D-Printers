@@ -1,0 +1,78 @@
+<launch>
+
+	<node pkg="omron_os32c_driver" type="omron_os32c_node" name="omron_laser_1">
+		<param name="host" value="192.168.1.80" />	
+		<param name="local_ip" value="192.168.1.70" />	
+		<param name="frame_id" value="base_omron1" />
+		<remap from="scan" to="omron_scan1"/>
+	</node>
+	<node pkg="omron_os32c_driver" type="omron_os32c_node" name="omron_laser_2">
+		<param name="host" value="192.168.2.81" />	
+		<param name="local_ip" value="192.168.2.71" />	
+		<param name="frame_id" value="base_omron2" />
+		<remap from="scan" to="omron_scan2"/>
+	</node>
+
+
+        <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter1">
+                <rosparam command="load" file="single_laser_filter_right.yaml" />
+                <remap from="scan" to="/omron_scan1" />
+                <remap from="scan_filtered" to="/omron_scan1_filtered" />
+        </node>
+
+        <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter2">
+                <rosparam command="load" file="single_laser_filter_right.yaml" />
+                <remap from="scan" to="/omron_scan2" />
+                <remap from="scan_filtered" to="/omron_scan2_filtered" />
+        </node>
+
+
+	  <!-- laser data merge -->
+	<node pkg="ira_laser_tools" name="laserscan_multi_merger1" type="laserscan_multi_merger">
+		<param name="destination_frame" value="/base_laser_link"/>
+		<param name="scan_destination_topic" value="/scan_multi"/>
+                <param name="laserscan_topics" value ="/omron_scan2_filtered /omron_scan1_filtered" />
+		<param name="angle_min" value="-360"/>
+		<param name="angle_max" value="360"/>
+		<param name="range_min" value="0.45"/>
+		<param name="range_max" value="100"/>
+	</node>
+
+        <!-- differential robot drive -->
+        <node pkg="diff_drive" type="diff_drive_odometry" name="diff_drive_odometry">
+                <!-- set a private parameter for the node -->
+                <param name="encoder_max" value="100000000" />
+                <param name="encoder_min" value="-100000000" />
+                <param name="ticks_per_meter" value="26525" />
+                <param name="wheel_separation" value="0.48" />
+        </node>
+
+        <!-- speed controller, take /cmd_vel commands -->
+        <node pkg="diff_drive" type="diff_drive_controller" name="diff_drive_controller">
+                <!-- set a private parameter for the node -->
+                <param name="max_motor_speed" value="500" />
+                <param name="ticks_per_meter" value="26525" />
+                <param name="wheel_separation" value="0.21" />
+        </node>
+
+        <node pkg="robot_setup_tf" type="tf_broadcaster" name="tf_broadcaster"></node>
+
+	<node pkg="wheel" type="base_control" name="base_control"></node>
+
+        <node pkg="joy" type="joy_node" name="joy_node"></node>
+<!-- 
+        <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node">
+                <param name="scale_linear" value="0.1"/>
+                <param name="scale_angular" value="0.1"/>
+        </node> -->
+
+
+          <!-- upload urdf -->
+        <param name="robot_description" textfile="wombat.urdf" />
+
+        <!-- robot state publisher -->
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+        <node pkg="system_control" type="system_control" name="system_control" />
+
+</launch>

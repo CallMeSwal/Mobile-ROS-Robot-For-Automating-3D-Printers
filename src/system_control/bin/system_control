@@ -1,0 +1,7 @@
+#! /usr/bin/python
+
+import system_control.robot_control
+
+
+if __name__ == '__main__':
+    system_control.robot_control.listener()

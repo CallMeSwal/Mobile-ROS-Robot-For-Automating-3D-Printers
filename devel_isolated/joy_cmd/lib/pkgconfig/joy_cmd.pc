@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/devel_isolated/joy_cmd
+
+Name: joy_cmd
+Description: Description of joy_cmd
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mangokid/wombat/devel_isolated/joy_cmd/lib 
+Requires: 

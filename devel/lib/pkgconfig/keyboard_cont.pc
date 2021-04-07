@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/devel
+
+Name: keyboard_cont
+Description: Description of keyboard_cont
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

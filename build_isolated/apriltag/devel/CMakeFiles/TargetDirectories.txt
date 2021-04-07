@@ -1,0 +1,10 @@
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/install.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/list_install_components.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/rebuild_cache.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/install/local.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/install/strip.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/apriltag.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/edit_cache.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/opencv_demo.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/apriltag_python.dir
+/home/mangokid/wombat/build_isolated/apriltag/devel/CMakeFiles/apriltag_demo.dir

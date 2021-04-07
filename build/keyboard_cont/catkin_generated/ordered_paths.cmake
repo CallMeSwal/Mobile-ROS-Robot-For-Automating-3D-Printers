@@ -1,0 +1,1 @@
+set(ORDERED_PATHS "/home/mangokid/wombat_catkin_build/devel/.private/apriltag_ros/lib;/home/mangokid/wombat_catkin_build/devel/lib;/opt/ros/kinetic/lib")

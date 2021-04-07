@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/install_isolated
+
+Name: system_control
+Description: Description of system_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mangokid/wombat/install_isolated/lib 
+Requires: 

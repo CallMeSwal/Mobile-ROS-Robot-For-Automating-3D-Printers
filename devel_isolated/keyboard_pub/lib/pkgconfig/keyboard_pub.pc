@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/devel_isolated/keyboard_pub
+
+Name: keyboard_pub
+Description: Description of keyboard_pub
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mangokid/wombat/devel_isolated/keyboard_pub/lib 
+Requires: 

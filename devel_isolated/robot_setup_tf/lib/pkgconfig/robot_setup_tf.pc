@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/devel_isolated/robot_setup_tf
+
+Name: robot_setup_tf
+Description: Description of robot_setup_tf
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mangokid/wombat/devel_isolated/robot_setup_tf/lib 
+Requires: 

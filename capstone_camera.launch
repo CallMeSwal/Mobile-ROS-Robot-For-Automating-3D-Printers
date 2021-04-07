@@ -1,0 +1,12 @@
+<launch>
+	<!-- Launch realsense camera  -->
+	<include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+
+	<!-- Launch image processing  -->
+        <node pkg="image_proc" type="image_proc" name="image_proc"  ns="/camera/color" />
+
+	<!-- Launch apriltags detector  -->
+        <include file="apriltags2.launch"/>
+
+</launch>
+

@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/devel
+
+Name: system_control
+Description: Description of system_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

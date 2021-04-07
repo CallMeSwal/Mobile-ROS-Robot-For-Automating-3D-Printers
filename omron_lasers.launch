@@ -1,0 +1,39 @@
+<launch>
+	<node pkg="omron_os32c_driver" type="omron_os32c_node" name="omron_laser_1">
+		<param name="host" value="192.168.1.80" />	
+		<param name="local_ip" value="192.168.1.70" />	
+		<param name="frame_id" value="base_omron1" />
+		<remap from="scan" to="omron_scan1"/>
+	</node>
+	<node pkg="omron_os32c_driver" type="omron_os32c_node" name="omron_laser_2">
+		<param name="host" value="192.168.2.81" />	
+		<param name="local_ip" value="192.168.2.71" />	
+		<param name="frame_id" value="base_omron2" />
+		<remap from="scan" to="omron_scan2"/>
+	</node>
+
+	  <!-- laser data merge -->
+	<node pkg="ira_laser_tools" name="laserscan_multi_merger1" type="laserscan_multi_merger">
+		<param name="destination_frame" value="/base_multi_scan"/>
+		<param name="scan_destination_topic" value="/scan_multi"/>
+    <param name="laserscan_topics" value ="/omron_scan2 /omron_scan1" />
+		<param name="angle_min" value="-360"/>
+		<param name="angle_max" value="360"/>
+		<param name="range_min" value="0.45"/>
+		<param name="range_max" value="100"/>
+	</node>
+
+	<node pkg="ira_laser_tools" name="laserscan_multi_merger2" type="laserscan_multi_merger">
+		<param name="destination_frame" value="/base_multi_scan"/>
+		<param name="scan_destination_topic" value="/scan_multi"/>
+    <param name="laserscan_topics" value ="/omron_scan2 /omron_scan1" />
+		<param name="angle_min" value="-360"/>
+		<param name="angle_max" value="360"/>
+		<param name="range_min" value="0.45"/>
+		<param name="range_max" value="100"/>
+	</node>
+
+
+
+
+</launch>

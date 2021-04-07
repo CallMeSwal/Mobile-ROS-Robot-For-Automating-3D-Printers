@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/install_isolated
+
+Name: diff_drive
+Description: Description of diff_drive
+Version: 1.0.0
+Cflags: -I/home/mangokid/wombat/install_isolated/include
+Libs: -L/home/mangokid/wombat/install_isolated/lib 
+Requires: actionlib_msgs

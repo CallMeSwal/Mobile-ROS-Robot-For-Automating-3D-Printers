@@ -1,0 +1,8 @@
+prefix=/home/mangokid/wombat/src/wheel/devel
+
+Name: wheel
+Description: Description of wheel
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mangokid/wombat/src/wheel/devel/lib 
+Requires: 
