@@ -13,3 +13,4 @@ cd ./Robot_For_Automating_3D_Printers
 roslaunch capstone_camera.launch  
 roslaunch capstone_drive.launch
 ```
+Proudly supported by: ARVI, McMaster Manufacturing Research Institute, Learning Factory
